@@ -585,7 +585,7 @@
 //  #define USE_SHT                                // [I2cDriver8] Enable SHT1X sensor (+1k4 code)
 //  #define USE_HTU                                // [I2cDriver9] Enable HTU21/SI7013/SI7020/SI7021 sensor (I2C address 0x40) (+1k5 code)
 //  #define USE_BMP                                // [I2cDriver10] Enable BMP085/BMP180/BMP280/BME280 sensors (I2C addresses 0x76 and 0x77) (+4k4 code)
-//    #define USE_BME68X                           // Enable support for BME680/BME688 sensor using Bosch BME68x library (+6k9 code)
+    #define USE_BME68X                           // Enable support for BME680/BME688 sensor using Bosch BME68x library (+6k9 code)
 //  #define USE_BH1750                             // [I2cDriver11] Enable BH1750 sensor (I2C address 0x23 or 0x5C) (+0k5 code)
 //  #define USE_VEML6070                           // [I2cDriver12] Enable VEML6070 sensor (I2C addresses 0x38 and 0x39) (+1k5 code)
     #define USE_VEML6070_RSET    270000          // VEML6070, Rset in Ohm used on PCB board, default 270K = 270000ohm, range for this sensor: 220K ... 1Meg
@@ -829,9 +829,9 @@
 //  #define USE_AS608_MESSAGES                     // Add verbose error messages (+0k4 code)
 //#define USE_TFMINIPLUS                           // Add support for TFmini Plus (TFmini, TFmini-S) LiDAR modules via UART interface (+0k8)
 //#define USE_HRG15                                // Add support for Hydreon RG-15 Solid State Rain sensor (+1k5 code)
-//#define USE_VINDRIKTNING                         // Add support for IKEA VINDRIKTNING particle concentration sensor (+0k6 code)
+#define USE_VINDRIKTNING                         // Add support for IKEA VINDRIKTNING particle concentration sensor (+0k6 code)
 //  #define VINDRIKTNING_SHOW_PM1                  // Display undocumented/supposed PM1.0 values
-//  #define VINDRIKTNING_SHOW_PM10                 // Display undocumented/supposed PM10 values
+  #define VINDRIKTNING_SHOW_PM10                 // Display undocumented/supposed PM10 values
 //#define USE_LD2410                               // Add support for HLK-LD2410 24GHz smart wave motion sensor (+2k8 code)
 //#define USE_LOX_O2                               // Add support for LuminOx LOX O2 Sensor (+0k8 code)
 //#define USE_GM861                                // Add support for GM861 1D and 2D Bar Code Reader (+1k3 code)

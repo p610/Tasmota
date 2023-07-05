@@ -89,26 +89,26 @@ jobs:
   base32-images:
     needs: safeboot-images
     runs-on: ubuntu-latest
-    if: github.repository == 'arendst/Tasmota'
+    if: github.repository == 'p610/Tasmota'
     continue-on-error: true
     strategy:
       matrix:
         variant:
           - tasmota32
-          - tasmota32-zbbrdgpro
-          - tasmota32-webcam
-          - tasmota32-bluetooth
-          - tasmota32-nspanel
-          - tasmota32-display
-          - tasmota32-ir
-          - tasmota32-lvgl
-          - tasmota32c3
-          - tasmota32c3cdc
+#           - tasmota32-zbbrdgpro
+#           - tasmota32-webcam
+#           - tasmota32-bluetooth
+#           - tasmota32-nspanel
+#           - tasmota32-display
+#           - tasmota32-ir
+#           - tasmota32-lvgl
+#           - tasmota32c3
+#           - tasmota32c3cdc
           - tasmota32s2
-          - tasmota32s2cdc
-          - tasmota32s3
-          - tasmota32s3cdc
-          - tasmota32solo1
+#           - tasmota32s2cdc
+#           - tasmota32s3
+#           - tasmota32s3cdc
+#           - tasmota32solo1
     steps:
       - uses: actions/checkout@v3
         with:
@@ -185,11 +185,11 @@ jobs:
       with:
         name: firmware
         path: ./mv_firmware
-    - name: Download safeboot firmwares
-      uses: actions/download-artifact@v3
-      with:
-        name: firmware_safeboot
-        path: ./mv_firmware
+#     - name: Download safeboot firmwares
+#       uses: actions/download-artifact@v3
+#       with:
+#         name: firmware_safeboot
+#         path: ./mv_firmware
     - name: Display structure of downloaded files
       run: ls -R ./mv_firmware/
     - name: Zip all map.gz files in one file -> map_all.zip
@@ -205,13 +205,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  Start_final_copy:
-    needs: Release
-    runs-on: ubuntu-latest
-    steps:
-    - name: Dispatch workflow in arendst/Tasmota-firmware
-      run: |
-         curl -X POST https://api.github.com/repos/arendst/Tasmota-firmware/actions/workflows/fetch_deploy.yml/dispatches \
-         -H 'Accept: application/vnd.github.everest-preview+json' \
-         -u ${{ secrets.API_TOKEN_GITHUB }} \
-         --data '{"ref": "gh_actions"}'
+#   Start_final_copy:
+#     needs: Release
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Dispatch workflow in arendst/Tasmota-firmware
+#       run: |
+#          curl -X POST https://api.github.com/repos/arendst/Tasmota-firmware/actions/workflows/fetch_deploy.yml/dispatches \
+#          -H 'Accept: application/vnd.github.everest-preview+json' \
+#          -u ${{ secrets.API_TOKEN_GITHUB }} \
+#          --data '{"ref": "gh_actions"}'

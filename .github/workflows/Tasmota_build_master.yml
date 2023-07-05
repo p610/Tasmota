@@ -16,19 +16,19 @@ concurrency:
 jobs:
   safeboot-images:
     runs-on: ubuntu-latest
-    if: github.repository == 'arendst/Tasmota'
+    if: github.repository == 'p610/Tasmota'
     continue-on-error: true
     strategy:
       matrix:
         variant:
-          - tasmota32solo1-safeboot
+#           - tasmota32solo1-safeboot
           - tasmota32-safeboot
-          - tasmota32c3-safeboot
-          - tasmota32c3cdc-safeboot
+#           - tasmota32c3-safeboot
+#           - tasmota32c3cdc-safeboot
           - tasmota32s2-safeboot
-          - tasmota32s2cdc-safeboot
-          - tasmota32s3-safeboot
-          - tasmota32s3cdc-safeboot
+#           - tasmota32s2cdc-safeboot
+#           - tasmota32s3-safeboot
+#           - tasmota32s3cdc-safeboot
     steps:
       - uses: actions/checkout@v3
         with:
